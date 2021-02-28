@@ -20,9 +20,14 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "HeroToolbox",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "HeroToolboxTests",
-            dependencies: ["HeroToolbox"]),
+            dependencies: ["HeroToolbox"],
+            resources: [
+                .process("jsonTestFile.json")
+            ]
+        ),
     ]
 )
